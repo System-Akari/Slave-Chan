@@ -5,16 +5,16 @@ bot_token = os.environ['TOKEN']
 bot= telebot.TeleBot(token=bot_token)
 
 AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/send - No envia nada. \n/youtube - Manda video random \n/IngDorian - Manda una pagina \n/html - manda un Html \n/Notas - Envia Notas\n'
-@bot.message_handler(commands=['ayuda']) # Indicamos que lo siguiente va a controlar el comando '/ayuda'
-def command_ayuda(m): # Definimos una función que resuleva lo que necesitemos.
+@bot.message_handler(commands=['ayuda']) 
+def command_ayuda(m): 
  
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    cid = m.chat.id 
  
-    bot.send_chat_action(cid, 'typing') # Enviando ...
+    bot.send_chat_action(cid, 'typing') 
  
-    time.sleep(1) #La respuesta del bot tarda 1 segundo en ejecutarse
+    time.sleep(1) 
  
-    bot.send_message( cid, AYUDA) # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.
+    bot.send_message( cid, AYUDA) 
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
