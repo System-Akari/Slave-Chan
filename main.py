@@ -1,8 +1,8 @@
+import os
 import telebot
 import time
-bot_token="5185755898:AAGDwv4LpV4bqywiXrr0ge11i6QiqTawFvw"
+bot_token = os.environ['TOKEN']
 bot= telebot.TeleBot(token=bot_token)
-
 
 AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/send - No envia nada. \n/youtube - Manda video random \n/IngDorian - Manda una pagina \n/html - manda un Html \n/Notas - Envia Notas\n'
 @bot.message_handler(commands=['ayuda']) # Indicamos que lo siguiente va a controlar el comando '/ayuda'
