@@ -34,10 +34,10 @@ def Ing(message):
 
 @bot.message_handler(commands=['Notas'])
 def Ing(message):
-    bot.reply_to(message, 'Aqui tienes tus notas'+' https://t.me/randomsaoko/2')
+    bot.reply_to(message, 'Aqui tienes tus notas mi amigo'+' https://t.me/randomsaoko/2')
 
 @bot.message_handler(commands=['Archivos'])
-def pca_papers(self, message):
+def pca_papers(message):
     bot.send_message(message.chat.id, "Files incoming")
     bot.send_document(message.chat.id, 'https://atikegalle.com/uploads/1514125303.pdf')
 
