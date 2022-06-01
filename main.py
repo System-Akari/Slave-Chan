@@ -36,25 +36,9 @@ def Ing(message):
 def Ing(message):
     bot.reply_to(message, 'Aqui tienes tus notas'+' https://t.me/randomsaoko/2')
 
-@bot.message_handler(commands=['html'])
-def html(message):
-    bot.reply_to(message, """ <!DOCTYPE html>
-<html>
-<body>
-
-<h1>The input pattern attribute</h1>
-
-<form action="/action_page.php">
-  <label for="country_code">Country code:</label>
-  <input type="text" id="country_code" name="country_code" pattern="[+][5][0][4]\s[2389][1-9][0-9]{2}[-][0-9]{4}" required title="Three letter country code"><br><br>
-  <input type="submit">
-</form>
-
-<p><strong>Note:</strong> The pattern attribute of the input tag is not supported in Safari 10 (or earlier).</p>
-
-</body>
-</html>
-
-""")
+@bot.message_handler(commands=['Archivos'])
+def pca_papers(self, message):
+    bot.send_message(message.chat.id, "Files incoming")
+    bot.send_document(message.chat.id, 'https://atikegalle.com/uploads/1514125303.pdf')
 
 bot.polling()
