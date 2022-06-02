@@ -13,7 +13,7 @@ varDB=[]
 
 db=funtions.getDB()
 
-AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/Notas - Generas los Botones. \nY pues el resto de comando los uso yo .I.\n el Admin PapaOso\n'
+AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/notas - Generas los Botones. \nY pues el resto de comando los uso yo .I.\n el Admin PapaOso\n'
 inicio='Bienvenido honorable miembro de Akari System! Mi nombre es Slave-chan\n y puedo proporcionarte los apuntes de las materias\n que necesites!Utiliza /help para ver los comandos.\n'
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
@@ -31,7 +31,7 @@ def send_welcome(message):
     cid = message.chat.id
     bot.send_message(cid, inicio)
 
-@bot.message_handler(commands=['Notas'])
+@bot.message_handler(commands=['notas'])
 def Notas(message):
     markup=types.ReplyKeyboardMarkup(row_width=2)
     btn1=types.KeyboardButton("/BasesDeDatos")
