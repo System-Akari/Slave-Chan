@@ -5,8 +5,8 @@ from telebot import types
 import time
 from libro import libro
 import funtions
-#bot_token = os.environ['TOKEN']
-bot_token='5134352310:AAEqyKKUfWNqt7_DAIHkOrigvvoDBOPi7cI'
+bot_token = os.environ['TOKEN']
+#bot_token='5134352310:AAEqyKKUfWNqt7_DAIHkOrigvvoDBOPi7cI'
 bot= telebot.TeleBot(token=bot_token)
 
 varDB=[]
