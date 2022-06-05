@@ -11,6 +11,11 @@ def getDB():
 def insertNoteDB(note):
     db=getDB()
     result=db.DB.insert_one(note)
+    
 def insertNoteSO(note):
     db=getDB()
     result=db.SO.insert_one(note)
+
+def insertNoteCE(note):
+    db=getDB()
+    result=db.CE.insert_one(note)
