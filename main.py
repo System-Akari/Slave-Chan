@@ -39,7 +39,7 @@ def Notas(message):
     btn3=types.KeyboardButton("/SistemasOperativos")
     btn4=types.KeyboardButton("/LenguajesDeProgramacion") #el resto los agregare despues 
     #btn5=types.KeyboardButton("/close")
-    markup.add(btn1,btn2,btn3)
+    markup.add(btn1,btn2,btn3,btn4)
     bot.send_message(chat_id=message.chat.id, text="Que Notas Quieres", reply_markup=markup)
     
 @bot.message_handler(commands=['SistemasOperativos'])
