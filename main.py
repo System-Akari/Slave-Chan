@@ -13,7 +13,7 @@ varDB=[]
 
 db=funtions.getDB()
 
-AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/notas - Generas los Botones. \nY pues el resto de comando los uso yo .I.\n el Admin PapaOso\n'
+AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/notas - Generas los Botones. \nEl resto de comandos están restringidos para usuarios sin permiso:c.\n Firma:Slave-Chan\n'
 inicio='Bienvenido honorable miembro de Akari System! Mi nombre es Slave-chan\n y puedo proporcionarte los apuntes de las materias\n que necesites!Utiliza /help para ver los comandos.\n'
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
@@ -37,10 +37,24 @@ def Notas(message):
     btn1=types.KeyboardButton("/BasesDeDatos")
     btn2=types.KeyboardButton("/CircuitosElectrico")
     btn3=types.KeyboardButton("/SistemasOperativos")
-    #btn4=types.KeyboardButton("/LenguajesDeProgramacion") el resto los agregare despues 
+    btn4=types.KeyboardButton("/LenguajesDeProgramacion") #el resto los agregare despues 
     #btn5=types.KeyboardButton("/close")
     markup.add(btn1,btn2,btn3)
     bot.send_message(chat_id=message.chat.id, text="Que Notas Quieres", reply_markup=markup)
+    
+@bot.message_handler(commands=['SistemasOperativos'])
+def pca_papers4(message):
+    cid = message.chat.id
+    db=funtions.getDB()
+    allOf=db.LP.find()
+    time.sleep(1) 
+    for i in allOf:
+        text=i["fecha"]
+        text1=i["link"]
+        text=str(text)
+        text1=str(text1)
+        bot.send_message(cid, text)  
+        bot.send_document(message.chat.id, text1)    
     
 @bot.message_handler(commands=['CircuitosElectrico'])
 def pca_papers3(message):
@@ -123,6 +137,14 @@ def send_text(message):
                 varD2=str(varD2)
                 Nota=libro(varD,varD2)
                 funtions.insertNoteCE(Nota.toCollection())
+                bot.send_message(cid,"agregado exitosamente")
+            elif arr[i]=="LP": 
+                varD=arr[i+1]
+                varD2=arr[i+2]
+                varD=str(varD)
+                varD2=str(varD2)
+                Nota=libro(varD,varD2)
+                funtions.insertNoteLP(Nota.toCollection())
                 bot.send_message(cid,"agregado exitosamente")
     except:
         bot.send_message(cid,"Algo fallo")

@@ -19,3 +19,7 @@ def insertNoteSO(note):
 def insertNoteCE(note):
     db=getDB()
     result=db.CE.insert_one(note)
+    
+def insertNoteLP(note):
+    db=getDB()
+    result=db.LP.insert_one(note)
