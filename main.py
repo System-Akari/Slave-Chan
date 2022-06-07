@@ -42,7 +42,7 @@ def Notas(message):
     markup.add(btn1,btn2,btn3,btn4)
     bot.send_message(chat_id=message.chat.id, text="Que Notas Quieres", reply_markup=markup)
     
-@bot.message_handler(commands=['SistemasOperativos'])
+@bot.message_handler(commands=['LenguajesDeProgramacion'])
 def pca_papers4(message):
     cid = message.chat.id
     db=funtions.getDB()
