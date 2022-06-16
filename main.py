@@ -34,7 +34,7 @@ def send_welcome(message):
     cid = message.chat.id
     bot.send_message(cid, inicio)
 
-@bot.message_handler(commands=['infoSubEscalvos'])
+@bot.message_handler(commands=['infosubescalvos'])
 def info(message):
     cid = message.chat.id
     bot.send_message(cid, infoempel)
