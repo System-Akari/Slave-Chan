@@ -16,7 +16,7 @@ db=funtions.getDB()
 AYUDA = 'Puedes utilizar los siguientes comandos : \n\n/notas - Generas los Botones. \nEl resto de comandos están restringidos para usuarios sin permiso:c.\n Firma:Slave-Chan\n'
 inicio='Bienvenido honorable miembro de Akari System! Mi nombre es Slave-chan\n y puedo proporcionarte los apuntes de las materias\n que necesites!Utiliza /help para ver los comandos.\n'
 infoempel='''Angelo Rafael Velasquez Lara(201923300409\nDany Jose Valdez Escalante(20202300197)\nErick Eduardo Mendoza Tercero(20202300164)\nMary Elizabeth Euceda Molina(20202300170)
-\nNestor Dario Aguilera Padilla(20192300030)
+Nestor Dario Aguilera Padilla(20192300030)
 '''
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
